@@ -1,4 +1,4 @@
-let correctWord = "GRAVITY"; // Change this on Monday when finalizing
+let correctWord = "GRAVITY";
 
 let teams = [];
 
@@ -8,6 +8,7 @@ document.getElementById("jumbleForm").addEventListener("submit", function(event)
     let teamName = document.getElementById("teamName").value.trim();
     let answer = document.getElementById("answer").value.trim().toUpperCase();
     let result = document.getElementById("result");
+    let teamsLength = teams.length;
 
     if (!teamName || !answer) return;
 
@@ -19,8 +20,15 @@ document.getElementById("jumbleForm").addEventListener("submit", function(event)
         return;
     }
 
+    for (let i = 0; i < teamsLength; i++) {
+        if (teams[i].teamName.toLowerCase() === teamName.toLowerCase()) {
+            result.innerHTML = "<span class='incorrect'>Team response already submitted</span>";
+            return;
+        }
+    }
+    
     if (answer === correctWord) {
-        result.innerHTML = "<span class='correct'>✅ Correct! You move to the next round.</span>";
+        result.innerHTML = "<span class='correct'>✅ Correct Answer!</span>";
         teams.push({ teamName, answer, exact: true, time: Date.now() });
     } else if (sortedAnswer === sortedCorrect) {
         result.innerHTML = "<span class='partially-correct'>⚠ Correct letters but wrong order!</span>";
@@ -41,7 +49,7 @@ function updateLeaderboard() {
     
     teams.slice(0, 25).forEach((team, index) => {
         let li = document.createElement("li");
-        li.innerHTML = <strong>#${index + 1}</strong> ${team.teamName} - ${team.answer} (${team.exact ? '✅ Exact' : '⚠ Jumbled'});
+        li.innerHTML = `<strong>#${index + 1}</strong> ${team.teamName} - (${team.exact ? '✅ Exact' : '⚠ Jumbled'})`;
         leaderboard.appendChild(li);
     });
 }
