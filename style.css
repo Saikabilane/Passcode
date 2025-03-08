@@ -48,4 +48,38 @@ button:hover {
 }
 
 /* Result Messages */
-.correct { color: #0
+.correct { 
+    color: #0f0; 
+    font-weight: bold; 
+}
+
+.partially-correct { 
+    color: #ff0; 
+    font-weight: bold; 
+}
+
+.incorrect { 
+    color: #f00; 
+    font-weight: bold; 
+}
+
+/* Leaderboard */
+#leaderboard {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#leaderboard li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#leaderboard li strong {
+    color: #ff8c00;
+}
