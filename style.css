@@ -1,0 +1,51 @@
+/* Cosmic Background */
+body { 
+    font-family: 'Poppins', sans-serif;
+    text-align: center; 
+    background: url('https://source.unsplash.com/1600x900/?galaxy,physics') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+}
+
+/* Centered Container */
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    margin-top: 20px;
+    max-width: 500px;
+}
+
+/* Input Fields */
+input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Button */
+button {
+    background: linear-gradient(45deg, #ff8c00, #ff0080);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #ff0080;
+}
+
+/* Result Messages */
+.correct { color: #0
